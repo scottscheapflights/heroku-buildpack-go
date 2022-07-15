@@ -422,9 +422,5 @@ determineTool() {
     elif [ -d "$build/src" -a -n "$(find "$build/src" -mindepth 2 -type f -name '*.go' | sed 1q)" ]; then
         TOOL="gb"
         setGoVersionFromEnvironment
-    else
-        err "Go modules, dep, Godep, GB or govendor are required. For instructions:"
-        err "https://devcenter.heroku.com/articles/go-support"
-        exit 1
     fi
 }
